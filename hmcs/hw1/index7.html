@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const alltime = 1440;
+        let hour = Number(prompt("hour"));
+        let min = Number(prompt("min"));
+        min += hour*60;
+        let result = alltime - min;
+        alert(`До конца дня осталось ${(result-result % 60) / 60} часов и ${result % 60} минут`)
+    </script>
+</body>
+</html>1

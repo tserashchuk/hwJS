@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function countDigit(value){
+            value = String(value);
+            return value.length
+        }
+
+        let a = 0;
+        let value = Number(prompt('введите число для кувырка'));
+        let counter = countDigit(value);
+        for (let i = 1; i <= counter; i++)
+        {
+            a += (value%10)*(10**(counter-i))
+            value = (value - value%10)/10;  
+        }
+
+        alert('a=',a);
+
+    </script>
+</body>
+</html>
