@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let digit = prompt('введите 10 чисел через пробел');
+        let mass = digit.split(' ');
+        let max=0, min=0;
+        for (let item of mass) {
+            if(Number(item) > 0) {
+                max++;
+            } 
+
+            else if(Number(item) < 0) {
+                min++;
+            }
+        }
+
+        alert(`положительных-${max} отрицатеотных-${min} нулей-${10-(max+min)}`)
+
+    </script>
+</body>
+</html>

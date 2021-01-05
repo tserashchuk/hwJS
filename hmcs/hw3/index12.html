@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt('a');
+        let b = +prompt('b');
+
+        
+        let digitMin = (a < b) ? a : b;
+        let digitMax = (a < b) ? b : a;
+        let i = digitMin;
+
+        for(i; i>0; i--){
+            if (digitMin%i==0 && digitMax%i==0){alert(i);break;}
+        }
+
+    </script>
+</body>
+</html>

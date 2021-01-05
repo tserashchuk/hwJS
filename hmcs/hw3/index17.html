@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let days = ['понедельник','вторник','среда','четверг','пятница','суббота','воскресенье']
+        let a = confirm('вывести следующий денек?');
+        let i = 0;
+
+        while (a){
+            if (i===7){i=0;}
+            a = confirm(days[i]);
+            i++;
+        }
+        
+
+    </script>
+</body>
+</html>
