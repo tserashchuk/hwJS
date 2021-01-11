@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const words = [ 
+        ['десять','одинадцать','двенадцать','тринадцать','четырнадцать','пятнадцать','шеснадцать','семнадцать','восемнадцать','девятнадцать'],
+        ['двадцать','тридцать','сорок','пятьдесят','шестьдесят','семдесят','восемдесят','девяносто'],
+        ['один','два','три','четыре','пять','шесть','семь','восемь','девять']
+
+        ]
+        let word = '';
+        let digit = +prompt('введите двузначное число');
+
+
+        if (digit >= 10 && digit <=19) {
+            word += (words[0][digit%10]);
+        }   else if (digit%10 === 0) { word += words[1][Math.trunc(digit/10)-2]; }
+            else if (digit>19 && digit < 100) {
+            word += words[1][Math.trunc(digit/10)-2];
+            word += ' ' + words[2][digit%10-1];
+
+        }
+
+        alert(word);
+        
+
+
+    </script>
+</body>
+</html>

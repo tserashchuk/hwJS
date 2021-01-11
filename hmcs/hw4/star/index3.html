@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt('введите строку').split('');
+        let small = new RegExp('[a-z]');
+        let big = new RegExp('[A-Z]');
+        let digit = new RegExp('[0-9]');
+
+        for (item in str){
+ 
+
+        if (digit.test(str[item])==true) {str[item] = '_';}
+        else if (small.test(str[item])==true) {str[item]=str[item].toUpperCase();}
+        else if (big.test(str[item])==true) {str[item]=str[item].toLowerCase();}
+        
+        }
+    
+        console.log(str);
+
+
+    </script>
+</body>
+</html>
