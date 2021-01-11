@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mass = [0,-1,-4,6,8,100,20];
+        let max = mass[0];
+        let sum = 0, start = 2, end = 4, i=0;
+        
+        for (item of mass) {
+            if (max < item) { max = item; }
+        }
+
+        console.log(`max = ${mass.indexOf(max)}`);
+
+
+        for (start; start <= end; start++){
+            if (mass[start]) {i++;}
+        }
+        console.log(`count = ${i}`);
+
+        start = mass.indexOf(max)
+        for (start; start<mass.length; start++){
+            sum += mass[start];
+        }
+        console.log(`sum = ${sum}`);
+
+    </script>
+</body>
+</html>

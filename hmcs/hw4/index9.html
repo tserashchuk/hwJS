@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let mass = [0,-1,-4,0,8,100,20];
+        let max = mass[0];
+        let maxIndex=0;
+        let sum = 0, i=0, c = 8, start=0, proizv=1;
+
+        for (let j=0; j<mass.length; j++) {
+            if (max > mass[j]) { max = mass[j]; maxIndex=j;}
+            if (mass[j] < 0) {proizv *= mass[j];}
+        }
+
+        for(let j=0; j < maxIndex; j++){
+            sum +=mass[j];
+        }
+
+
+        console.log(`sum = ${sum}, proizv = ${proizv}, min=${max}`);
+
+    </script>
+</body>
+</html>

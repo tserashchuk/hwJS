@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let mass = [1,4,6,8,234,7,34,2,64];
+        let min = mass[0];
+        let sum = 0;
+        for (item of mass) {
+            if (min > item) { min = item}
+            sum += Math.abs(item);
+        }
+        sum = sum - Math.abs(mass[0]);
+        min = mass.indexOf(min);
+        console.log(`${sum} и индекс ${min}`);
+  
+    </script>
+</body>
+</html>

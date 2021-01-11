@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let mass = [0,-1,-4,0,8,100,20];
+        let min = mass[0];
+        let sum = 0, i=0;
+        
+        for (item of mass) {
+            if (min > item) { min = item; }
+        }
+
+        console.log(`min index = ${mass.indexOf(min)}`);
+
+        for (item of mass) {
+            if (item === 0) { i++; }
+        }
+        console.log(`0 count = ${i}`);
+
+        start = mass.indexOf(min);
+        for (start; start<mass.length; start++){
+            sum += mass[start];
+        }
+        console.log(`sum = ${sum}`);
+
+
+    </script>
+</body>
+</html>

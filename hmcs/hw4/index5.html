@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let mass = [0,-1,-4,0,8,-100,20];
+        let max = mass[0];
+        let proiz = 1, i=0, c = 8;
+        
+        for (item of mass) {
+            if (Math.abs(max) < Math.abs(item)) { max =item; }
+        }
+
+
+        let start = mass.indexOf(max)
+        for (start; start < mass.length; start++){
+            proiz *= mass[start];
+        }
+        console.log(`proiz = ${proiz}`);
+
+        for (item of mass) {
+            if (item < c) { i++; }
+        }
+
+        console.log(`c < count = ${i}`);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let mass = [0,-1,-4,0,8.2,100,20.5];
+        let max = mass[0];
+        let sum = 0, i=0, c = 8, start=0;
+
+        for (let j=0; j<mass.length; j++) {
+            if (mass[j] < c) { i++;}
+            if (mass[j] < 0) {start = j + 1;}
+        }
+
+        console.log(`c < count = ${i}`);
+
+        for (start; start<mass.length; start++) {
+
+            sum+= Math.trunc(mass[start]);
+        }
+
+        console.log(`sum = ${sum}`);
+
+
+    </script>
+</body>
+</html>
