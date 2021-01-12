@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt('введите строку');
+
+        for (item in str){
+
+            if (str[item]==='-') {
+                str = str.replace(str[item],'');
+                str = str.replace(str[Number(item)],str[Number(item)+1].toUpperCase());
+            }
+        }
+        console.log(str);
+    </script>
+</body>
+</html>

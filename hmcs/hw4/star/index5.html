@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = prompt('введите строку');
+        let word=str[0].toUpperCase();
+        for (item in str){
+
+            if (str[item]===' ') {
+                word += str[Number(item)+1].toUpperCase();
+            }
+        }
+        console.log(word);
+    </script>
+</body>
+</html>
