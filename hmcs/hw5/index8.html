@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Дан массив [3, 4, 1, 2, 7]. Отсортируйте его по убыванию, потом по возрастанию, потом чтобы в начале были четные а после нечетные элементы массива -->
+
+    <script>
+        let x = [3, 4, 1, 2, 7];
+        function min(a,b){
+            return (a > b) ? 1 : -1
+        }
+        function max(a,b){
+            return (a > b) ? -1 : 1
+        }
+        function chet(a,b){
+            return (a % 2 === 0) ? -1 : 1
+        }
+
+        x.sort(chet)
+        console.log(x);
+    </script>
+</body>
+</html>

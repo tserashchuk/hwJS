@@ -1,22 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
+    <script>
 
-  <style>
-    .email-address:before:first-child  {
-   content: "Email address: ";
+let lists = [
+        {name:'Яблоко', amount:24, buy:true},
+        {name:'Банан', amount:11, buy:false},
+        {name:'Мандарин', amount:3, buy:true},
+        {name:'Нектарин', amount:3, buy:false},
+        {name:'Апельсин', amount:3, buy:true},
+ 
+    ]    
+    
+let products = {name:'Нектарин', amount:3, buy:true};
+
+function addPurchase(list, product){
+let a = list.find(item=> item.name === product.name);
+if (!a) {
+    list.push(product);
+} else { a.amount+=product.amount;}
+console.log(list);
+
+
 }
-  </style>
-  <div class='email-address'>efwefwefewf</div>
-  <div class='email-address'>efwefwefewf</div>
-  <div class='email-address'>efwefwefewf</div>
-  <div class='email-address'>efwefwefewf</div>
-  <div class='email-address'>efwefwefewf</div>
 
+function sortyObj(a,b){
+    return a.amount > b.amount ? 1 : -1;
+}
+
+let me = function(item) {
+    if (item.name === products.name){
+    item.buy=true;
+}
+    return item
+}
+
+
+
+
+// addPurchase(lists,products);
+console.log(lists.sort(sortyObj));
+
+// lists.forEach(me);
+// console.log(lists);
+
+//=-================================================================================================================================================================
+
+// let arr = [
+//     { name: `яблоко`, amount: 24, sale: true },
+//     { name: `банан`, amount: 11, sale: false },
+//     { name: `мандарин`, amount: 3, sale: true }
+// ]
+// let fruit = `мандарин`;
+// let addPurchase = function() {
+//     if (typeof(newFunction(arr, fruit)) === `object` && fruit === newFunction(arr, fruit).name) {
+//         arr.forEach(function(value) {
+//             if (value.name === fruit) {
+//                 value.amount += 1;
+//             }
+//         });
+
+//     } else {
+//         arr.push({ name: fruit, amount: 1, sale: true })
+//     }
+//     console.log(arr);
+
+// }
+// addPurchase();
+
+// function newFunction(arr, fruit) {
+//     return arr.find(value => value.name === fruit.toLowerCase())
+// }
+
+
+
+
+
+    </script>
 </body>
 </html>

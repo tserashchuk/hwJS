@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="pay-button">
+        <input type="checkbox" name="confirmBox" id="confirmBox" onchange="changeElem(this)">
+        <input type="submit" value="Кнопка" key='sdfsdfsfd'>
+        <input type="text" name="textInput" id="textInputId" value="тестовый инпут">
+    </div>
+
+    <script>
+        let button = document.querySelector('.pay-button input[type=submit]');
+        button.disabled = true;
+        button.setAttribute('disabled');
+        let check = document.querySelector('.pay-button input[type=checkbox]'); 
+        
+        function changeElem(elem){
+            if (elem.checked === true) {
+                button.disabled = false;
+            }
+            else { button.disabled = true;}
+        }
+
+
+
+    </script>
+</body>
+</html>
