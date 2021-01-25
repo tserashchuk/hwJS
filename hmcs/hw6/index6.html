@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- tooltips 
+    Вопрос: нормально ли биндить все событие онмаус овер на обработчик 
+    Вопрос: что такое событие (глобально)
+
+
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .tooltip {
+            position: fixed;
+            background-color: darkorchid;
+            color: #fff;
+            width: 100px;
+        }
+
+
+    </style>
+    <button data-tooltip="Подсказка">ShowTooltip</button>
+    <p data-tooltip="Кувырказка">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus amet voluptatum eveniet nihil pariatur eos
+        dolor ratione, temporibus quam perspiciatis, officiis alias explicabo omnis excepturi. Harum reiciendis veniam
+        voluptatum dolore.</p>
+
+    <button data-tooltip="Подсказка">ShowTooltip</button>
+
+
+    <script>
+        let toolTipElem;
+
+        document.onmouseover = function (e) {
+            let elem = e.target;
+            if (elem.tagName == 'BUTTON') {
+                let elemTooltipText = elem.dataset.tooltip;
+                let coords = elem.getBoundingClientRect();
+
+                toolTipElem = document.createElement('div');
+                toolTipElem.classList.add('tooltip');
+                toolTipElem.innerHTML = elemTooltipText;
+                document.body.append(toolTipElem)
+                if (coords.top < 50) {
+                    toolTipElem.style.top = coords.top + 20 + 'px';
+                }
+                else { toolTipElem.style.top = coords.top - 20 + 'px'; }
+
+            }
+        }
+
+
+
+        document.onmouseout = function (e) {
+            if (toolTipElem) {
+                toolTipElem.remove();
+                toolTipElem = null;
+            }
+
+        };
+    </script>
+</body>
+
+</html>

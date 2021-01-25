@@ -1,0 +1,49 @@
+
+<!-- TODO -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<input id="clickText" type="text">
+<button id="clickButton">Click</button>
+   <div id='todoPlace'>
+
+   </div> 
+
+
+<script>
+
+
+function addTodo(){
+    let place = document.querySelector('#todoPlace');
+
+    if (document.querySelector('#ulType')) {
+    
+        let ulPlace = document.querySelector('#ulType');
+        let liPlace = document.createElement('li');
+        liPlace.textContent = inp.value;
+        ulPlace.appendChild(liPlace);
+    } else {
+        let ulPlace = document.createElement('ul');
+        ulPlace.id = 'ulType';
+        let liPlace = document.createElement('li');
+        liPlace.textContent = inp.value;
+        ulPlace.appendChild(liPlace);
+        place.appendChild(ulPlace);
+    
+
+}
+}
+
+let inp = document.querySelector('#clickText');
+let button = document.querySelector('#clickButton').addEventListener('click', addTodo);
+
+</script>
+</body>
+</html>

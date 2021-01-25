@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #modalWindow {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #modalContent {
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            width: 300px;
+            padding: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Montseratt", sans-serif;
+        }
+
+        #modalContent>h1 {
+            text-align: center;
+            flex-basis: 100%;
+            font-size: 20px;
+        }
+        #modalContent>button {
+            padding: 10px 25px 10px 25px;
+            background-color: blue;
+            border: 0;
+            border-radius: 10px;
+            color:#fff;
+        }
+
+        .input-fw-100 {
+            flex-basis: 100%;
+            margin: 10px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid rgb(197, 195, 195);
+        }
+    </style>
+
+    <button id='modal' onclick="openWindow(1)">Открыть окно</button>
+    <div id='overL'></div>
+    <div id='modalWindow'>
+        <div id="modalContent">
+            <h1>Открыто модальное окно</h1></br>
+            <input type="text" placeholder="Введите Имя" class="input-fw-100" onkeyup="validation(this)" id='outputIN'>
+            <input type="text" class="input-fw-100" placeholder="Введите Имя" pattern="^[a-zA-Z\s]+$">
+            <button id='closeModal' onclick="closeWindow(1)">Закрыть</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        function openWindow(buf) {
+            let elem = document.querySelector('#modalWindow');
+            elem.style.cssText = 'display: inherit; transition: all 1s ease-out;';
+        }
+
+        function closeWindow(buf) {
+            let elem = document.querySelector('#modalWindow');
+            elem.removeAttribute('style');
+        }
+
+
+        function validation(inputValue){
+            inputValue.value = inputValue.value.replace(/[^a-zA-Z]/g, '');
+        }
+    </script>
+
+
+<form action="demo">
+    Country code: <input type="text" name="country_code" pattern="[A-Za-z]{6,}" title="Three letter country code">
+  
+  <input id="doctorProfileContactnumber" name="doctorProfileContactnumber" ng-model="doctor.profile.contactNumber" type="text" class="user-input" pattern="[0-9]{10}" title="10 digit mobile number">
+  
+  <input type="submit">
+  </form>
+</body>
+
+</html>

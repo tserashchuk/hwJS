@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-
-    <div class="pay-button">
-        <input type="checkbox" name="confirmBox" id="confirmBox" onchange="changeElem(this)">
-        <input type="submit" value="Кнопка" key='sdfsdfsfd'>
-        <input type="text" name="textInput" id="textInputId" value="тестовый инпут">
-    </div>
-
-    <script>
-        let button = document.querySelector('.pay-button input[type=submit]');
-        button.disabled = true;
-        button.setAttribute('disabled');
-        let check = document.querySelector('.pay-button input[type=checkbox]'); 
-        
-        function changeElem(elem){
-            if (elem.checked === true) {
-                button.disabled = false;
-            }
-            else { button.disabled = true;}
+    <style>
+        body {
+            margin: 0;
         }
 
+        .vi {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
 
-
-    </script>
+        .holder {
+            height: 100vh;
+        }
+    </style>
+    <div class='holder'>
+        <iframe class='vi' src="https://www.youtube.com/embed/zGZmUH3MC8s?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=zGZmUH3MC8s" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
 </body>
+
 </html>

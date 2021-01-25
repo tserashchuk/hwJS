@@ -1,0 +1,35 @@
+
+<!-- counter -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<button id='max' onclick="myFunc(1)">Добавить 1</button>
+<button id='min' onclick="myFunc(-1)">Убавить 1</button>
+<div id="counter" >0</div>
+
+
+<script>
+
+function myFunc(but){
+    let elem = document.querySelector('#counter');
+    if (but == 1){
+    counter = Number(elem.innerHTML) + 1;
+    elem.innerHTML = counter;}
+    else if (but == -1) {
+    counter = Number(elem.innerHTML) - 1;
+    elem.innerHTML = counter;
+    }
+}
+
+
+</script>
+
+</body>
+</html>

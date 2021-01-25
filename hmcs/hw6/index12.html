@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .holder{ height: 100px; width: 400px; background-color: gray;}
+        .zapolniator {height: 100px; width:0%; background-color:indigo;}
+    </style>
+    <button onclick="zapolnisto()">Click</button>
+    <div class="holder">
+        <div class="zapolniator"></div>
+    </div>
+
+    <script>
+        function zapolnisto(){
+
+            let elem = document.querySelector('.zapolniator');
+            let coord = elem.getBoundingClientRect();
+            if (coord.width === 400){ return }
+            console.log(coord.width);
+            elem.style.width = coord.width + 20 + "px";
+        }
+    </script>
+</body>
+
+</html>

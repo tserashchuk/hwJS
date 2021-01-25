@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #tabs {
+            display: flex;
+        }
+
+        .colored {
+            background-color: gold;
+        }
+
+        .hided { display: none;}
+
+        .active{ display: block; flex-basis: 100%; border-left: 1px solid black; padding: 10px;}
+
+
+    </style>
+    <div id="tabs">
+        <div id="navs">
+            <div class="colored" data-contentId = '1'>HTML</div>
+            <div data-contentId = '2'>CSS</div>
+            <div data-contentId = '3'>JS</div>
+        </div>
+        <div>
+        <div id='contentPlace1' class="active">
+            1Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatibus explicabo praesentium dolorum
+            accusantium quibusdam vero, suscipit magnam deserunt autem veritatis tenetur labore, deleniti doloribus
+            expedita ut? Excepturi, veniam quisquam.Rerum tenetur officia tempore quasi sapiente fuga excepturi ullam
+            quod, nobis deserunt nam nemo repellat ipsam ab aspernatur modi atque illo alias fugit quia vel corrupti
+            quaerat. Sed, illum tempora.
+        </div>
+        <div id='contentPlace2' class="hided">
+            2Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatibus explicabo praesentium dolorum
+            accusantium quibusdam vero, suscipit magnam deserunt autem veritatis tenetur labore, deleniti doloribus
+            expedita ut? Excepturi, veniam quisquam.Rerum tenetur officia tempore quasi sapiente fuga excepturi ullam
+            quod, nobis deserunt nam nemo repellat ipsam ab aspernatur modi atque illo alias fugit quia vel corrupti
+            quaerat. Sed, illum tempora.
+        </div>
+        <div id='contentPlace3' class="hided">
+           3Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatibus explicabo praesentium dolorum
+            accusantium quibusdam vero, suscipit magnam deserunt autem veritatis tenetur labore, deleniti doloribus
+            expedita ut? Excepturi, veniam quisquam.Rerum tenetur officia tempore quasi sapiente fuga excepturi ullam
+            quod, nobis deserunt nam nemo repellat ipsam ab aspernatur modi atque illo alias fugit quia vel corrupti
+            quaerat. Sed, illum tempora.
+        </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelector('#navs').addEventListener('click', kkk);
+        function kkk(){
+            
+            let elem = event.target;
+            document.querySelector('.colored').classList.remove('colored');
+            elem.classList.add('colored')
+            document.querySelector('.active').classList.replace('active','hided');
+            
+            document.querySelector(`#contentPlace${elem.dataset.contentid}`).classList.add('active');
+        }
+
+    </script>
+
+</body>
+
+</html>

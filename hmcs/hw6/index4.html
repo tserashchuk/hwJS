@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- светофор 
+    Вопрос: конвертировать ли NodeList в Array 
+
+
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .ball {
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        .ballActive {
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(226, 147, 43);
+        }
+    </style>
+    <div>
+        <div class="ballActive ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+    <button onclick="change()">Следующий</button>
+
+    <script>
+        function change() {
+            let elems = document.querySelectorAll('.ball');
+            for (let i = 0; i < elems.length; i++) {
+                if (elems[i] == elems[elems.length - 1] && elems[i].classList.contains('ballActive')) {
+                    elems[0].classList.add('ballActive');
+                    elems[i].classList.remove('ballActive');
+                    break;
+
+                } else if (elems[i].classList.contains('ballActive')) {
+                    elems[i + 1].classList.add('ballActive');
+                    elems[i].classList.remove('ballActive');
+                    break;
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

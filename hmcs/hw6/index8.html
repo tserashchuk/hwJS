@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="ouputDiv">
+
+
+    </div>
+
+
+    <script>
+document.onpointermove = function (e) {
+    document.getElementById('ouputDiv').innerHTML = `x = ${e.x}, y= ${e.y}`
+   
+}
+
+document.onclick = function (e) {
+    document.getElementById('ouputDiv').innerHTML += `click=${e.which}`
+
+   
+}
+
+document.oncontextmenu = function (e) {
+    document.getElementById('ouputDiv').innerHTML += `click=2`
+
+   
+}
+    </script>
+</body>
+</html>

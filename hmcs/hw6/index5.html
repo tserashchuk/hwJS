@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .colored {
+            background-color: darkgreen;
+            transition: 1s ease-out all;
+        }
+        li {
+            padding: 10px;;
+        }
+    </style>
+    <ul>
+        <li>Мастер и Маргарита
+            Михаил Булгаков</li>
+        <li>Евгений Онегин
+            Александр Пушкин</li>
+        <li>Преступление и наказание
+            Фёдор Достоевский</li>
+        <li>Война и мир
+            Лев Толстой</li>
+        <li>Маленький принц
+            Антуан де Сент-Экзюпери</li>
+        <li>Герой нашего времени
+            Михаил Лермонтов</li>
+        <li>Двенадцать стульев
+            Евгений Петров
+            Илья Ильф</li>
+    </ul>
+    <script>
+        document.querySelector('ul').addEventListener('click', kkk);
+        function kkk() {
+            let b = event.target;
+            if (b.tagName == 'LI'){
+            if (document.querySelector('.colored')) {
+                document.querySelector('.colored').classList.remove('colored');;
+            }
+            b.classList.add('colored');}
+
+        }
+
+    </script>
+</body>
+
+</html>
