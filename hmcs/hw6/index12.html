@@ -24,8 +24,9 @@
             let elem = document.querySelector('.zapolniator');
             let coord = elem.getBoundingClientRect();
             if (coord.width === 400){ return }
-            console.log(coord.width);
-            elem.style.width = coord.width + 20 + "px";
+            elem.style.width += coord.width + 5 + "px";
+            console.log(elem.offsetWidth);
+            
         }
     </script>
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let student = [{ name: 'AAA', enrollment: 100 }, { name: 'DDD', enrollment: 200 }, { name: 'BBB', enrollment: 50 }, { name: 'CCC', enrollment: 50 }];
+
+        let a = student.reduce((accum, value, index) => {
+            if (typeof accum[value.enrollment] === 'undefined') {
+                accum[value.enrollment] = [];
+            }
+            accum[value.enrollment].push(value);
+            return accum
+
+
+
+
+        },{});
+
+
+        console.log(a);
+
+
+
+
+//  console.log(new2)
+
+
+    </script>
+
+
+
+<!-- 
+    <script>
+        let student = [{ name: 'AAA', enrollment: 100 }, { name: 'BBB', enrollment: 50 }, { name: 'CCC', enrollment: 50 }];
+        let new2 = { '50': [], '100': [] }
+
+        student.reduce((accum, value, index) => {
+            new2[accum.enrollment].push(accum);
+            return value
+        },student[student.length-1]);
+
+
+
+        
+ console.log(new2)
+
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+// <!-- <script>
+//     let student = [{ name: 'AAA', enrollment: 100 }, { name: 'BBB', enrollment: 50 }, { name: 'CCC', enrollment: 50 }];
+//     let new2 = { '50': [], '100': [] }
+
+//     student.reduce((accum, value, index) => {
+//         if (index == student.length - 1) {
+//             new2[accum.enrollment].push(accum);
+//             new2[value.enrollment].push(value);
+//             return value;
+//         }
+//         new2[accum.enrollment].push(accum);
+//         return accum = value;
+//     });
+
+//     console.log(new2);
+
+// </script> -->
+
+
+</body>
+
+</html>

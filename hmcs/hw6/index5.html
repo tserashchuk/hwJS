@@ -39,10 +39,9 @@
         document.querySelector('ul').addEventListener('click', kkk);
         function kkk() {
             let b = event.target;
+            
             if (b.tagName == 'LI'){
-            if (document.querySelector('.colored')) {
-                document.querySelector('.colored').classList.remove('colored');;
-            }
+                document.querySelector('.colored')?.classList.remove('colored');
             b.classList.add('colored');}
 
         }

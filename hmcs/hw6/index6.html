@@ -22,7 +22,9 @@
             background-color: darkorchid;
             color: #fff;
             width: 100px;
+          
         }
+       
 
 
     </style>
@@ -41,12 +43,16 @@
             let elem = e.target;
             if (elem.tagName == 'BUTTON') {
                 let elemTooltipText = elem.dataset.tooltip;
-                let coords = elem.getBoundingClientRect();
+                let coords = elem.getBoundingClientRect(); 
+
+              
 
                 toolTipElem = document.createElement('div');
                 toolTipElem.classList.add('tooltip');
                 toolTipElem.innerHTML = elemTooltipText;
                 document.body.append(toolTipElem)
+
+
                 if (coords.top < 50) {
                     toolTipElem.style.top = coords.top + 20 + 'px';
                 }

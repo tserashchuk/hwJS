@@ -25,12 +25,11 @@
 
 <script>
     function fgh() {
-        let x = window.event.pageX;
-        let y = window.event.pageY;
+        let x = event.pageX;
+        let y = event.pageY;
         let elem = document.querySelector('#imageBall');
         elem.textContent
         let animation = elem.animate([
-           
             { transform: `translate(${x}px, ${y}px)` }
         ], 500);
 

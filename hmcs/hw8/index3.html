@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<style>
+    .filmsContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .filmItem {
+        width: 120px;
+        margin:15px;
+    }
+
+    .filmItem > img {
+        width: 100px;
+        height: auto;
+    }
+</style>
+
+    <input type="text" id='searchField' value='time'>
+    <select name="mediaType" id="mediaType">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+    </select>
+    <button onclick="kkk(1)">Get</button>
+
+    <div class="container">
+        <div class="filmsContainer"></div>
+        <div class="pagination"></div>
+    </div>
+
+
+
+
+    <script>
+    let PAGINATION = [1,2,3,5,6,7];
+    document.onload = fff(0);
+
+
+       function fff(pArr){ 
+        let paginationDiv = document.querySelector('.pagination');
+        paginationDiv.innerHTML='';
+        PAGINATION = PAGINATION.map((number) => number+=pArr);
+        PAGINATION.forEach(
+                (number) => {   
+                    paginationDiv.insertAdjacentHTML('beforeEnd',`<button onclick="kkk(${number})">${number}</button>`)
+                    
+                }
+            );
+    }
+
+        function kkk(page) {
+            let searchQuery = document.querySelector('#searchField').value;
+            let mediaType = document.querySelector('#mediaType');
+            mediaType = mediaType[mediaType.selectedIndex].value;
+            let response = fetch(`http://www.omdbapi.com/?s=${searchQuery}&type=${mediaType}&page=${page}&apikey=3fc524d1`)
+                .then(response => response.json())
+                .then(data => ppp(data.Search));
+                fff(1);
+                
+                
+        }
+
+        function ppp(data) {
+            console.log(data)
+            let filmsContainer = document.querySelector('.filmsContainer');
+            filmsContainer.innerHTML = '';
+            data.forEach(
+                (film) => {
+                    filmsContainer.insertAdjacentHTML('beforeEnd',`<div class="filmItem" id="${film.imdbID}"><img src='${film.Poster}'></br>${film.Title} - ${film.Year} - ${film.Type}</div>`)
+
+                }
+            )
+        }
+
+
+
+
+    // async function kkk() {
+    //     let searchQuery = document.querySelector('#searchField').value;
+    //     let mediaType = document.querySelector('#mediaType');
+    //     mediaType = mediaType[mediaType.selectedIndex].value;
+    //     let response = await fetch(`http://www.omdbapi.com/?t=${searchQuery}&type=${mediaType}&apikey=3fc524d1`);
+    //     let data = await response.json();
+    //     console.log(data);
+    // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class='boys'></div>
+<div class="nextDoor" ></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .boys{display: flex; justify-content: space-between; flex-wrap: wrap;}
+    .easyFlexyBoyNextDooor{ border: 1px solid black; width: 20%; margin: 10px;}
+    .nextDoor{display: flex; justify-content: center; flex-wrap: wrap;}
+    .rapetheskin{}
+</style>
+
+    <script>
+let myUsers = {}
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', false);
+xhr.send();
+myUsers = JSON.parse(xhr.response);
+console.log(myUsers);
+
+for (user of myUsers) {
+    console.log(user)
+    let elemHtml = document.createElement('div');
+    elemHtml.innerHTML = user.name;
+    elemHtml.setAttribute('onclick','kkk(this)');
+    elemHtml.setAttribute('data-userid',user.id);
+    elemHtml.className = 'easyFlexyBoyNextDooor';
+    document.querySelector('.boys').appendChild(elemHtml);
+}
+
+function kkk(user){
+    document.querySelector('#about')?.remove();
+    let contactBlock = document.createElement('div');
+    contactBlock.id = 'about';
+    let showmoreButton = document.createElement('button');
+    showmoreButton.innerText = 'Show Posts'
+    showmoreButton.className = 'rapetheskin'
+    contactBlock.innerHTML = myUsers[user.dataset.userid-1].name;
+    document.querySelector('.nextDoor').appendChild(contactBlock);
+    document.querySelector('#about').appendChild(showmoreButton);
+}
+    </script>
+</body>
+</html>

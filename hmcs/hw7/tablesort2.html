@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th class="thead">Цифра</th>
+            <th class="thead">Буква</th>
+            <th class="thead">Микс</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>5</td>
+            <td>a</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>700</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>600</td>
+            <td>x</td>
+        </tr>
+    </table>
+
+
+<script>
+let a = document.querySelector('table').addEventListener('click', function(){kkk(this)});
+
+
+
+function kkk(allTable){
+    let allRows = allTable.rows;
+    let index = Array.from(allTable.rows).slice(0,1);
+    index = index.indexOf(event.target);
+    for (let i = 1; i < allRows.length; i++){
+        let allCells = allRows[i].cells;
+        
+        
+    }
+    // console.log(allRows);
+
+}
+
+
+</script>
+</body>
+</html>

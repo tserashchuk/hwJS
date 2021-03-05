@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th class="thead">Цифра</th>
+            <th class="thead">Буква</th>
+            <th class="thead">Микс</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>5</td>
+            <td>a</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>700</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>600</td>
+            <td>x</td>
+        </tr>
+    </table>
+
+
+<script>
+let a = document.querySelector('table').addEventListener('click', function(){kkk(this)});
+
+
+
+function sortirebany(a,b,ind){
+    if (a.cells[ind].innerHTML > b.cells[ind].innerHTML) {return 1}
+    if (a.cells[ind].innerHTML < b.cells[ind].innerHTML) {return -1}
+    return 0
+}
+
+function kkk(allTable){
+    let ind = Array.from(allTable.rows).slice(0,1)[0];
+    ind = [...ind.cells].indexOf(event.target);
+    massArray = Array.from(allTable.rows).slice(1);
+    massArray.sort(function(a,b){
+        f = sortirebany(a,b,ind);
+        return f 
+    })
+    allTable.tBodies[0].append(...massArray);
+    
+}
+
+
+</script>
+</body>
+</html>

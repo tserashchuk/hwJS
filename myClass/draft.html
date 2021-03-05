@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // метод конструктор  --------------------------------------------------------
+
+
+        function User(name) { // пишем с большой буквы
+            this.name = name; // можем обращаться к себе через this.
+            this.isAdmin = false;
+        }
+
+        let user = new User("Вася");
+        let user2 = new User('Не Вася');
+
+
+        // просто создание нового объекта --------------------------------------------------------
+
+        let demoobj = {'name':'Вася', 'isAdmin': false}
+
+        // создание специальным синтаксисом --------------------------------------------------------
+
+        class DemoUser {
+            constructor(name){
+                this.name = name;
+                this.isAdmin = false;
+            }
+        }
+        let a = new DemoUser('Вася')
+
+        // --------------------------------------------------------
+
+        console.log(user2)
+        console.log(demoobj)
+        console.log(a)
+
+
+        // let demoobj ={'name':'Вася', 'isAdmin': false, 'ololo':function(){alert('ololwefwefewo')}}
+        // console.log(demoobj.ololo())
+
+
+    </script>
+</body>
+
+</html>
