@@ -6,12 +6,12 @@ now.setHours(0, 0, 0, 0);
 function printCalendar(year, month) {
     document.querySelector('#calendar')?.remove();
     document.querySelector('.current')?.remove();
-    
+
     let calend = new Date(year, month);
-    
+
     let data = "<table id='calendar'><tbody><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr></tbody></table>"
     document.body.insertAdjacentHTML('beforeEnd', data);
-    document.body.insertAdjacentHTML('afterBegin', `<span class='current' onclick='back();'><span>${year}</span>/<span>${month+1}</span></span>`);
+    document.body.insertAdjacentHTML('afterBegin', `<span class='current' onclick='back();'><span>${year}</span>/<span>${month + 1}</span></span>`);
     for (let i = 0; i < 7; i++) {
         document.querySelector('#calendar').tBodies[0].insertAdjacentHTML('beforeEnd', `<tr class = 'my'></tr>`);
         for (let j = 1; j < calend.getDay(); j++) { document.querySelectorAll('.my')[i].insertAdjacentHTML('beforeEnd', `<td class = 'mytd'> </td>`); }
