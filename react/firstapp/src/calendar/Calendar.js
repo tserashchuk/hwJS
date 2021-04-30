@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 
 
@@ -11,10 +12,11 @@ class Calendar extends React.Component {
 
             month: now.getMonth(),
             year: now.getFullYear(),
-            daysCount: new Date(now.getFullYear(), now.getMonth()+1, 0).getDate(),
+            daysCount: new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate(),
             dayInWeek: new Date(now.getFullYear(), now.getMonth(), 1).getDay(),
             days: [],
-
+            test:'',
+            weatherData: '',
             daysName: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс',],
             monthName: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
                 "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
@@ -24,10 +26,11 @@ class Calendar extends React.Component {
 
 
     componentDidMount() {
+        console.log(this.state)
         this.setState((prevState) => {
             return { days: Array.from({ length: prevState.daysCount }, (_, k) => k + 1) }
         })
-
+        
     }
 
     nextDateHandler = () => {
@@ -90,34 +93,43 @@ class Calendar extends React.Component {
     }
 
     focusTD = (event) => {
-        console.log(event.target)
+        axios.get(`http://api.weatherapi.com/v1/current.json?key=332e49a54abb470ab0c182855210604&q=Minsk&aqi=no`).then((request) => {
+            console.log(request.data.current)
+            this.setState({weatherData:{'Температура:':request.data.current.temp_c,"Ашчушчаецца как:": request.data.current.feelslike_c}})
+            this.dateUpdate()
+        })
+
     }
+
+
     renderWeek = () => {
         let week = []
         let shifted = []
         let days = this.state.days
 
         for (let j = 0; j <= 6; j++) {
-            week.push(<td className="day" onClick={this.focusTD}><span className="number">{days[0]}</span></td>)
+            week.push(<td className="day"><div className="number" onClick={this.focusTD}>{days[0]}</div></td>)
             shifted = days.shift()
         }
         return week
     }
 
 
-   
+
 
     render() {
         return (
-
-            <Template
-                next={this.nextDateHandler}
-                prev={this.prevDateHandler}
-                monthName={this.state.monthName[this.state.month]}
-                year={this.state.year}
-                daysName={this.state.daysName}
-                rend={this.renderWeeks}
-            />
+            <>
+                <Template
+                    next={this.nextDateHandler}
+                    prev={this.prevDateHandler}
+                    monthName={this.state.monthName[this.state.month]}
+                    year={this.state.year}
+                    daysName={this.state.daysName}
+                    rend={this.renderWeeks}
+                />
+                { this.state.weatherData ? <div>{Object.entries(this.state.weatherData).map((element)=> <p>{element}</p>)}</div> :''}
+            </>
 
         )
     }
@@ -163,16 +175,3 @@ function Template({ next, prev, monthName, year, daysName, rend }) {
 }
 
 export default Calendar
-
-
-
-
-
-
-input = [{ name: '123', id: 1}, { name: '321', id: 2}]; 
-
-input.reduce((elem,index)=>{
-    accum[elem.id] = elem.name
-}, accum )
-
-output = {1: '123', 2: '123'}

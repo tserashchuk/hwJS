@@ -1,3 +1,24 @@
+.currencydiv {
+    min-height: 35px;
+    max-width: 250px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    /* justify-content: center; */
+}
+
+span {
+    line-height: 35px;
+    font-size: 24px;
+    
+}
+
+select {
+    margin-left:auto !important;
+    /* align-content: flex-end; */
+}
+
+
 .todoholder{
     margin-top: 100px;
 }
